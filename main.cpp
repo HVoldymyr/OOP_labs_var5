@@ -1,34 +1,47 @@
 #include <iostream>
-#include "vector.h"
+#include "Vector.h"
 
 using namespace std;
 
-int main()
+int main() 
 {
-    int x1, y1, z1, x2, y2, z2;
+    int x, y, z;
 
-    cout << "Enter first vector (3 values): ";
-    cin >> x1 >> y1 >> z1;
+    cout << "Enter x, y, z for vector a: ";
+    cin >> x >> y >> z;
+    Vector a(x, y, z);
 
-    cout << "Enter second vector (3 values): ";
-    cin >> x2 >> y2 >> z2;
+    cout << "Enter x, y, z for vector b: ";
+    cin >> x >> y >> z;
+    Vector b(x, y, z);
 
-    Vector a(x1, y1, z1), b(x2, y2, z2), c;
+    Vector c;
 
-    cout << "c = a + b" << endl;
+    cout << "Adding vectors: " << endl;
     c = a + b;
+    c.show();
 
-    cout << "a: " << a.getX() << ", " << a.getY() << ", " << a.getZ() << endl;
-    cout << "b: " << b.getX() << ", " << b.getY() << ", " << b.getZ() << endl;
-    cout << "c: " << c.getX() << ", " << c.getY() << ", " << c.getZ() << endl;
+    cout << "Scalar product with scalar 2: " << endl;
+    c = a % 2;
+    c.show();
 
-    int scalar;
-    cout << "Enter a scalar for scalar multi: ";
-    cin >> scalar;
+    cout << "Multiplying vector by scalar 2: " << endl;
+    c *= 2;
+    c.show();
 
-    cout << "c % 2 (scalar multiplication)" << endl;
-    c = c % scalar;
-    cout << "c: " << c.getX() << ", " << c.getY() << ", " << c.getZ() << endl;
+    cout << "Assigning vector b to vector a: " << endl;
+    a = b;
+    a.show();
+
+    cout << "Post-decrementing vector a: " << endl;
+    c = a--;
+    a.show();
+    c.show();
+
+    cout << "Pre-decrementing vector b: " << endl;
+    c = --b;
+    b.show();
+    c.show();
 
     return 0;
 }

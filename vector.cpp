@@ -52,7 +52,7 @@ Vector Vector::operator--(int)
     return temp;
 }
 
-Vector operator*(const Vector& vec, int scalar)
+void Vector::show() const
 {
-    return Vector(vec.getX() * scalar, vec.getY() * scalar, vec.getZ() * scalar);
+    cout << "(" << x << ", " << y << ", " << z << ")" << endl;
 }

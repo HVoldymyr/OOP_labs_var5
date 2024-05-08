@@ -22,8 +22,7 @@ public:
     Vector& operator-- ();
     Vector operator-- (int);
 
+    void show() const;
 };
-
-Vector operator* (const Vector& vec, int scalar);
 
 #endif // VECTOR_H
